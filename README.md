@@ -67,7 +67,7 @@ plots the output of the loss function for each epoch
 
 
 # Summary table: 
-
+Mean absolute errors for the three models are shown below:
 | Value\Model | Neural network     | Linear regression  | Quadratic regression |
 |-------------|--------------------|--------------------|----------------------|
 | L*          | 1.8639297685169036 | 4.5966228965582285 | 2.187636465294087    |
