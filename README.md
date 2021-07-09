@@ -3,7 +3,7 @@ Dylan Pilz
 
 Last updated: 8.7.2021
 
-#Overview
+# Overview
 The CIELAB colorspace is of great importance in food image evaluation
 since it mirrors human color perception more accurately than the typical
 RGB colorspace used by most cameras. It is therefore better suited for
@@ -15,7 +15,7 @@ for use in food evaluation.
 
 The data is taken from an image of a standard color checker, with known L*a*b* values.
 
-#Linear regression (lin_regress.py):
+# Linear regression (lin_regress.py):
 
 Linear regression approach, using linear_model from sklearn library.
 
@@ -28,33 +28,7 @@ Produce scatter plot and best fit line
 calculate_stats(expected, predicted, title)
 Prints summary statistics(shown below) and returns mean absolute error
 
-
-L value - linear model
--------------------------------------
-Mean abs error: 4.5966228965582285
-Median error: 3.8848823718920507
-Min error: 0.3953531196788731 at index 3
-Max error: 13.433412731378581 at index 18
--------------------------------------
-
-a value - linear model
--------------------------------------
-Mean abs error: 7.017837540294636
-Median error: 4.722660574701337
-Min error: 0.3726550914651559 at index 8
-Max error: 20.385482594892615 at index 24
--------------------------------------
-
-b value - linear model
--------------------------------------
-Mean abs error: 4.7359271862145285
-Median error: 2.5329451499982945
-Min error: 0.1663003888353387 at index 17
-Max error: 25.092210990241433 at index 11
--------------------------------------
-
-
-#Quadratic regression(quad_regress.py):
+# Quadratic regression(quad_regress.py):
 
 Quadratic regression, again using linear_model but with RG, RB, GB, R^2, G^2, B^2 appended to input array
 
@@ -72,32 +46,8 @@ Provides summary statistics(shown below) and returns mean absolute error
 
 quad_setup(rgb_data)
 
-L value - quadratic model
--------------------------------------
-Mean abs error: 2.187636465294087
-Median error: 2.1823326437838837
-Min error: 0.3374057248608935 at index 13
-Max error: 5.538765782499933 at index 18
--------------------------------------
 
-a value - quadratic model
--------------------------------------
-Mean abs error: 3.0173261809247562
-Median error: 1.303165311489248
-Min error: 0.06980233171595751 at index 37
-Max error: 11.985517986656236 at index 1
--------------------------------------
-
-b value - quadratic model
--------------------------------------
-Mean abs error: 2.4048787362640494
-Median error: 1.343226117898225
-Min error: 0.016768196851240147 at index 31
-Max error: 9.724663685571048 at index 22
--------------------------------------
-
-
-#Neural network(neural_net.py):
+# Neural network(neural_net.py):
 
 Splits LAB input into seperate columns, and trains a seperate model for each, with 2 hidden layers containing
 4 nodes each. Performs decently well, but could be improved significantly given more training data. The accuracy
@@ -115,45 +65,17 @@ Contains 2 hidden dense layers with 4 nodes each.
 plot_loss(hist, label)
 plots the output of the loss function for each epoch
 
-L value NN
--------------------------------------
-Mean abs error: 2.649895610809326
-Median error: 1.9026937
-Min error: [0.01737976] at index 39
-Max error: [9.156391] at index 23
--------------------------------------
-D
 
-a value NN
--------------------------------------
-Mean abs error: 6.881444798878262
-Median error: 5.9735413
-Min error: [0.13208336] at index 18
-Max error: [24.364315] at index 25
--------------------------------------
+# Summary table: 
+
+| Value\Model | Neural network     | Linear regression  | Quadratic regression |
+|-------------|--------------------|--------------------|----------------------|
+| L*          | 1.8639297685169036 | 4.5966228965582285 | 2.187636465294087    |
+| a*          | 6.498623516630558  | 7.017837540294636  | 3.0173261809247562   |
+| b*          | 2.848936311006546  | 4.7359271862145285 | 2.4048787362640494   |
 
 
-b value NN
--------------------------------------
-Mean abs error: 5.640956619367712
-Median error: 3.8693168
-Min error: [0.00230414] at index 16
-Max error: [18.158203] at index 2
--------------------------------------
-
-
-Summary table: 
-
------------  -----------------  ------------------  --------------------
-Value\Model  Neural network     Linear regression   Quadratic regression
-L*           2.649895610809326  4.5966228965582285  2.187636465294087
-a*           6.881444798878262  7.017837540294636   3.0173261809247562
-b*           5.640956619367712  4.7359271862145285  2.4048787362640494
------------  -----------------  ------------------  --------------------
-
-
-References:
-
+# References:
 Katherine León, Domingo Mery, Franco Pedreschi, Jorge León,
 Color measurement in L∗a∗b∗ units from RGB digital images,
 Food Research International,
