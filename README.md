@@ -1,7 +1,7 @@
 # RGB to LAB converter
 Dylan Pilz
 
-Last updated: 8.7.2021
+Last updated: 7/9/2021
 
 # Overview
 The CIELAB colorspace is of great importance in food image evaluation
